@@ -314,12 +314,3 @@ cd frontend
 npm run build
 ```
 
-The backend health endpoint can be checked with:
-
-```text
-GET http://localhost:5002/api/health
-```
-
-## License
-
-This project is released under the MIT License.
