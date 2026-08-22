@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+:root {
+  --ink: #171827;
+  --muted: #6b7280;
+  --paper: #f8f9fc;
+  --surface: #ffffff;
+  --line: #e8eaf0;
+  --navy: #171827;
+  --teal: #5b4bdb;
+  --teal-soft: #eeebff;
+  --coral: #ff6b6b;
+  --coral-soft: #fff0f0;
+  --gold: #f5b942;
+  --danger: #dc3d52;
+  --shadow: 0 18px 45px rgba(47, 40, 113, 0.09);
+  --sans: 'Inter', 'Segoe UI', sans-serif;
+  --heading: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+body {
+  min-width: 320px;
+  margin: 0;
+  background: #f8f9fc;
+}
+button, input, textarea, select { font: inherit; }
+button { transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease; }
+button:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(23, 59, 69, 0.15); }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid rgba(91, 75, 219, 0.3); outline-offset: 3px; }
+#root { min-height: 100svh; color: var(--ink); }
+h1, h2, h3 { font-family: var(--heading); color: var(--navy); }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; }
+h2 { margin: 0 0 8px; font-size: clamp(1.65rem, 3vw, 2.35rem); }
+h3 { margin: 0 0 8px; }
+p { line-height: 1.55; }
+a { color: var(--teal); font-weight: 600; }
+
+input, textarea, select {
+  width: 100%; min-height: 44px; padding: 11px 13px; color: var(--ink);
+  background: rgba(255, 255, 255, 0.86); border: 1px solid var(--line); border-radius: 10px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+input:focus, textarea:focus, select:focus { border-color: var(--teal); box-shadow: 0 0 0 4px rgba(29, 129, 120, 0.12); outline: none; }
+textarea { resize: vertical; }
+button { border-radius: 10px; cursor: pointer; font-weight: 700; }
+button:disabled { cursor: wait; opacity: 0.65; }
+table { color: var(--ink); }
+th { color: var(--navy); letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.75rem; }
+td { font-size: 0.94rem; }
+@media (max-width: 700px) { #root { overflow: hidden; } h2 { font-size: 1.65rem; } table { min-width: 650px; } }

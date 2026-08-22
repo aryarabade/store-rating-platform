@@ -1,0 +1,6 @@
+import axiosInstance from './axiosInstance';
+
+export const signup = (data) => axiosInstance.post('/auth/signup', data);
+export const login = (data) => axiosInstance.post('/auth/login', data);
+export const getMe = () => axiosInstance.get('/auth/me');
+export const updatePassword = (data) => axiosInstance.put('/auth/update-password', data);

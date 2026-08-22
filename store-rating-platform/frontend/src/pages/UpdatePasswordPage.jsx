@@ -1,0 +1,8 @@
+import { useState } from 'react';
+import * as authApi from '../api/authApi';
+
+export default function UpdatePasswordPage() {
+  const [form, setForm] = useState({ currentPassword: '', newPassword: '' }); const [message, setMessage] = useState(''); const [error, setError] = useState(''); const [loading, setLoading] = useState(false);
+  async function handleSubmit(event) { event.preventDefault(); setError(''); setMessage(''); setLoading(true); try { await authApi.updatePassword(form); setMessage('Password updated successfully.'); setForm({ currentPassword: '', newPassword: '' }); } catch (err) { setError(err.response?.data?.errors?.join(', ') || err.response?.data?.message || 'Update failed'); } finally { setLoading(false); } }
+  return <main className="password-page"><form className="password-card" onSubmit={handleSubmit}><div className="password-icon">⌑</div><p className="eyebrow">ACCOUNT SECURITY</p><h2>Update Password</h2><p>Choose a strong password to keep your StoreRate account secure.</p>{message && <p className="form-alert success-alert">{message}</p>}{error && <p className="form-alert error-alert">{error}</p>}<label>Current Password<input type="password" placeholder="Enter current password" value={form.currentPassword} onChange={(event) => setForm({ ...form, currentPassword: event.target.value })} required /></label><label>New Password<input type="password" placeholder="8–16 chars, uppercase + special character" value={form.newPassword} onChange={(event) => setForm({ ...form, newPassword: event.target.value })} required /></label><small>Your new password must contain an uppercase letter and a special character.</small><button className="auth-submit" disabled={loading}>{loading ? 'Updating…' : 'Update Password'}</button></form></main>;
+}
