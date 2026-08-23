@@ -6,11 +6,11 @@ const { hashPassword } = require('../utils/hashPassword');
 
 /**
  * POST /api/auth/signup
- * Public — Normal Users only. Admins/store owners are created by an Admin.
+ * Public — creates an account with the selected role.
  */
 async function signup(req, res, next) {
   try {
-    const { name, email, address, password } = req.body;
+    const { name, email, address, password, role } = req.body;
 
     const existing = await User.findOne({ where: { email } });
     if (existing) {
@@ -24,7 +24,7 @@ async function signup(req, res, next) {
       email,
       address,
       password: hashedPassword,
-      role: 'user'
+      role
     });
 
     const token = signToken({ id: user.id, role: user.role });

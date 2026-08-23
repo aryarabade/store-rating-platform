@@ -1,6 +1,18 @@
 node_modules/
+
+# Local environment and secrets
 .env
-.env.local
+.env.*
+!.env.example
+
+# Local database files
+*.sqlite
+*.sqlite3
+*.db
+
+# IDE project files
+*.iml
+
 dist/
 build/
 .vite/

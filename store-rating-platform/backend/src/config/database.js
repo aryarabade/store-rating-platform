@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 const { Sequelize } = require('sequelize');
 
 const dialect = process.env.DB_DIALECT || 'mysql';
@@ -6,7 +7,9 @@ const dialect = process.env.DB_DIALECT || 'mysql';
 const sequelizeConfig = dialect === 'sqlite'
   ? {
       dialect: 'sqlite',
-      storage: process.env.DB_STORAGE || './database.sqlite',
+      storage: process.env.DB_STORAGE
+        ? path.resolve(__dirname, '../..', process.env.DB_STORAGE)
+        : path.resolve(__dirname, '../../database.sqlite'),
       logging: false
     }
   : {

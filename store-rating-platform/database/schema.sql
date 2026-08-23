@@ -2,8 +2,8 @@
 -- Store Rating Platform - Database Schema
 -- ============================================
 
-CREATE DATABASE IF NOT EXISTS store_rating_db;
-USE store_rating_db;
+CREATE DATABASE IF NOT EXISTS store_rating_platform;
+USE store_rating_platform;
 
 -- ============================================
 -- USERS TABLE
@@ -70,11 +70,3 @@ CREATE INDEX idx_users_name ON users(name);
 CREATE INDEX idx_stores_name ON stores(name);
 CREATE INDEX idx_ratings_store ON ratings(store_id);
 
--- ============================================
--- Seed: create the first System Administrator
--- NOTE: this password hash is a placeholder — you will
--- generate a real bcrypt hash from the seeder script (Node),
--- not write plain text here. See backend seed instructions below.
--- ============================================
--- INSERT INTO users (name, email, password, address, role)
--- VALUES ('System Administrator Account', 'admin@platform.com', '<bcrypt_hash>', 'HQ Address', 'admin');
