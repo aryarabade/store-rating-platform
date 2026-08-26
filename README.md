@@ -1,6 +1,4 @@
-Here’s your complete **README.md** file, already structured and ready to upload to GitHub as a single code block. You can copy this directly into a `README.md` file in your repository:
 
-```markdown
 # ⭐ StoreRate
 
 > **Discover stores. Share experiences. Make better choices.**
@@ -308,13 +306,8 @@ npm run lint
 - [ ] Do not commit `.env` or DB files  
 - [ ] Run frontend lint & build  
 
----
 
-## 📄 License
 
-This project is developed for **educational and portfolio purposes**.
-
----
 
 <div align="center">
 
@@ -323,6 +316,3 @@ This project is developed for **educational and portfolio purposes**.
 **Built with ❤️ using React, Node.js, Express, Sequelize & MySQL/SQLite.**
 
 </div>
-```
-
-This is now a **single, clean README.md** file — you can upload it directly to GitHub without modification. Would you like me to also create a **shorter version** (like a quick-start README) for people who just want installation and usage instructions?
